@@ -13,27 +13,20 @@ const getDocuments = (envelopeid) => {
     },
     encoding: null,
   };
-  return rp(documents)
-    .then((body) => {
-      fs.writeFileSync("example.zip", body);
-      console.log("Documents Saved");
-      return "Successful";
-    })
-    .catch((err) => {
-      console.log("Documents not Saved");
-      console.log(err.error);
-      return "Unsuccessful";
-    });
+  return rp(documents);
 };
 
 router.get("/", async function (req, res, next) {
   const { envelopeid } = req.query;
   try {
-    let results = await getDocuments(envelopeid);
-    console.log(results);
+    let body = await getDocuments(envelopeid);
+    fs.writeFileSync("example.zip", body);
+    console.log("Documents Saved");
+    let results = "Successful";
     res.render("getDocuments", { results, envelopeid });
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
+    res.render("error", error);
   }
 });
 

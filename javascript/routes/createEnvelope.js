@@ -50,19 +50,19 @@ const createEnvelope = () => {
       authorization: `Bearer ${process.env.API_KEY}`, // API key
     },
   };
-  return rp(envelope)
-    .then((body) => body)
-    .catch((err) => {
-      err;
-      console.log(err.message);
-    });
+  return rp(envelope);
 };
 
 router.get("/", async function (req, res, next) {
-  let result = await createEnvelope();
-  console.log(result);
-  let envelopeid = JSON.parse(result).envelope_id;
-  res.render("index", { envelopeid });
+  try {
+    let result = await createEnvelope();
+    console.log(result);
+    let envelopeid = JSON.parse(result).envelope_id;
+    res.render("index", { envelopeid });
+  } catch (error) {
+    console.log(error.message);
+    res.render("error", error);
+  }
 });
 
 module.exports = router;

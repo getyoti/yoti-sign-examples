@@ -11,19 +11,18 @@ const getEnvelope = (envelopeid) => {
       authorization: `Bearer ${process.env.API_KEY}`, // API key
     },
   };
-  return rp(envelope)
-    .then((body) => body)
-    .catch((err) => {
-      err;
-      console.log(err.message);
-    });
+  return rp(envelope);
 };
 
 router.get("/", async function (req, res, next) {
-  const { envelopeid } = req.query;
-  let result = await getEnvelope(envelopeid);
-  console.log(result);
-  res.render("getEnvelope", { result, envelopeid });
+  try {
+    let result = await getEnvelope(envelopeid);
+    console.log(result);
+    res.render("getEnvelope", { result, envelopeid });
+  } catch (error) {
+    console.log(error.message);
+    res.render("error", error);
+  }
 });
 
 module.exports = router;

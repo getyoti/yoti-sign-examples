@@ -11,22 +11,19 @@ const archiveEnvelope = (envelopeid) => {
       authorization: `Bearer ${process.env.API_KEY}`, // API key
     },
   };
-  return rp(envelope)
-    .then((body) => {
-      body;
-      return "Successful";
-    })
-    .catch((err) => {
-      err;
-      return `Unsuccessful: ${err.message}`;
-    });
+  return rp(envelope);
 };
 
 router.get("/", async function (req, res, next) {
   const { envelopeid } = req.query;
-  let result = await archiveEnvelope(envelopeid);
-  console.log(result);
-  res.render("archiveEnvelope", { result, envelopeid });
+  try {
+    let result = await archiveEnvelope(envelopeid);
+    console.log("Successful", result);
+    res.render("archiveEnvelope", { envelopeid });
+  } catch (error) {
+    console.log(error.message);
+    res.render("error", error);
+  }
 });
 
 module.exports = router;

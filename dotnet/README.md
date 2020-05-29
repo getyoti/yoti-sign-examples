@@ -11,5 +11,6 @@
 1) Run `cd dotnet/YotiSignDemo`
 1) Rename `.env.example` to `.env`
 1) Add your Bearer Authentication Token to the `YOTI_AUTHENTICATION_TOKEN` variable in the `.env` file
+1) Customise the `options.json` file as you wish
 1) Run `dotnet run`
 1) visit <https://localhost:5001/sign>

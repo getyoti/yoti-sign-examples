@@ -74,7 +74,7 @@ namespace YotiSignDemo.Controllers
             }
         }
 
-        private Uri GetRequestUrl()
+        private static Uri GetRequestUrl()
         {
             if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("YOTI_SIGN_BASE_URL")))
             {

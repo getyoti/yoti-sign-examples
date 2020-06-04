@@ -1,0 +1,20 @@
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+<pre>
+    <code class="prettyprint" id="results"></code>
+</pre>
+
+<a href="/getDocuments?envelopeid={{envelopeid}}">
+    <p>Get Completed Documents {{envelopeid}}</p>
+</a>
+
+<script>
+    let result = '{{{result}}}';
+    result = result.replace(/{/g, "\n{\n")
+    result = result.replace(/}/g, "\n}")
+    result = result.replace(/]/g, "\n]")
+    result = result.replace(/,/g, ",\n")
+    console.log(result)
+    document.getElementById("results").innerHTML = result;
+
+</script>

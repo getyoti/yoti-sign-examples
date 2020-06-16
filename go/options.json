@@ -1,0 +1,54 @@
+{
+  "file_name": "test.pdf",
+  "name": "envelope name",
+  "emails": {
+    "invitation": {
+      "body": {
+        "message": "Please sign this document"
+      }
+    }
+  },
+  "recipients": [
+    {
+      "name": "User 1",
+      "email": "test@test.com",
+      "role": "CEO",
+      "auth_type": "no-auth",
+      "sign_group": 1,
+      "tags": [
+        {
+          "page_number": 1,
+          "x": 0.1,
+          "y": 0.1,
+          "type": "signature",
+          "optional": false,
+          "file_name": "test.pdf"
+        }
+      ]
+    },
+    {
+      "name": "User 2",
+      "email": "test@test.com",
+      "role": "CPO",
+      "auth_type": "sign-auth",
+      "yoti_attributes": [ "full_name" ],
+      "sign_group": 2,
+      "tags": [
+        {
+          "page_number": 1,
+          "x": 0.6,
+          "y": 0.3,
+          "type": "signature",
+          "optional": false,
+          "file_name": "test.pdf"
+        }
+      ]
+    }
+  ],
+  "notifications": {
+    "destination": "https://mysite.com/events",
+    "subscriptions": [
+      "envelope_completion"
+    ]
+  }
+}

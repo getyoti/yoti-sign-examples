@@ -10,7 +10,7 @@
 1) Clone this repo
 1) Run `cd java`
 1) Rename `application.yml.example` to `application.yml`
-1) Add your Bearer Authentication Token to the `YOTI_AUTHENTICATION_TOKEN` variable in the `.env` file
+1) Add the Yoti Sign Base URL and your Bearer Authentication Token to the `baseUrl` and `authenticationToken` variables in the `application.yml` file`
 1) Customise the `options.json` file as you wish
 1) Run `mvn clean package`
 1) Run `java -jar target/sign-demo-1.0.0.jar'

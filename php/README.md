@@ -11,5 +11,6 @@
 1) Run `cd php`
 1) Rename `.env.example` to `.env`
 1) Add your Bearer Authentication Token to the `YOTI_AUTHENTICATION_TOKEN` variable in the `.env` file
+1) Run `composer install`
 1) Customise `$options` in [index.php](./index.php) as you wish
 1) Run `php index.php`

@@ -1,4 +1,6 @@
 {
+    "name": "yoti/php-sign-example",
+    "description": "PHP Yoti Sign Example",
     "require": {
         "guzzlehttp/guzzle": "^7.0",
         "symfony/dotenv": "^5.1"

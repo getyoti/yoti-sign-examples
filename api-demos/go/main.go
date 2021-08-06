@@ -18,7 +18,7 @@ const (
 	selfSignedKeyName  = "SelfSignedKey.pem"
 	selfSignedCertName = "SelfSignedCert.pem"
 	portNumber         = 8080
-	defaultBaseURL     = "https://www.yotisign.com"
+	defaultBaseURL     = "https://demo.www.yotisign.com"
 )
 
 func getBaseURL() string {

@@ -27,4 +27,3 @@ public class Config {
         this.baseUrl = baseUrl;
     }
 }
-

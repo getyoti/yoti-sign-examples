@@ -1,0 +1,7 @@
+# Output binary
+api-demo
+
+# Example project generated self-signed certificate
+yotiSelfSignedCert.pem
+yotiSelfSignedKey.pem
+

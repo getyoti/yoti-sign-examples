@@ -1,4 +1,4 @@
-# Go Yoti Sign Example
+# Yoti Sign API Go Example
 
 ## Setup
 
@@ -8,9 +8,8 @@
 ## Running the example
 
 1) Clone this repo
-1) Run `cd go`
 1) Rename `.env.example` to `.env`
 1) Add your Bearer Authentication Token to the `YOTI_AUTHENTICATION_TOKEN` variable in the `.env` file
 1) Customise the `options.json` file as you wish
-1) Run `go run .`
+1) Run `go run .` from this directory
 1) visit <https://localhost:8080>

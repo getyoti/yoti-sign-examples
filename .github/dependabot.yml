@@ -23,7 +23,7 @@ updates:
     - LAFYoti
     - jlmartyres
     - nikhilPank
-  
+
 - package-ecosystem: gomod
   directory: "/"
   schedule:
@@ -59,4 +59,3 @@ updates:
     - LAFYoti
     - jlmartyres
     - nikhilPank
-

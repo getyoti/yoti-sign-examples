@@ -20,7 +20,7 @@ secrets.config
 /src/Examples/**/*.pem
 
 # Backup & report files from converting an old project file
-# to a newer Visual Studio version. 
+# to a newer Visual Studio version.
 UpgradeLog*.htm
 Backup*/
 

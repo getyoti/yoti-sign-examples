@@ -4,44 +4,57 @@ import (
 	"bytes"
 	"crypto/tls"
 	"fmt"
-	_ "github.com/joho/godotenv/autoload"
 	"io"
 	"io/ioutil"
 	"mime/multipart"
 	"net/http"
 	"os"
 	"path/filepath"
-)
 
+	_ "github.com/joho/godotenv/autoload"
+)
 
 const (
 	selfSignedKeyName  = "SelfSignedKey.pem"
 	selfSignedCertName = "SelfSignedCert.pem"
 	portNumber         = 8080
+	defaultBaseURL     = "https://www.yotisign.com"
 )
+
+func getBaseURL() string {
+	if value, exists := os.LookupEnv("YOTI_SIGN_BASE_URL"); exists && value != "" {
+		return value
+	}
+
+	return defaultBaseURL
+}
+
+func getRequestURL() string {
+	baseURL := getBaseURL()
+	return fmt.Sprintf("%s/v2/envelopes", baseURL)
+}
 
 func home(w http.ResponseWriter, r *http.Request) {
 	token := "Bearer " + os.Getenv("YOTI_AUTHENTICATION_TOKEN")
-	url := os.Getenv("YOTI_SIGN_BASE_URL")
+	url := getRequestURL()
 
-	//Read options.json
-	optionsFile,err := os.Open("options.json")
+	// Read options.json
+	optionsFile, err := os.Open("options.json")
 	defer optionsFile.Close()
 	if err != nil {
 		fmt.Println(err)
 	}
-	options,err := ioutil.ReadAll(optionsFile)
+	options, err := ioutil.ReadAll(optionsFile)
 
-
-	//build payload
+	// build payload
 	payload := &bytes.Buffer{}
 	writer := multipart.NewWriter(payload)
 	_ = writer.WriteField("options", string(options))
 
-	//read test.pdf
+	// read test.pdf
 	file, err := os.Open("test.pdf")
 	defer file.Close()
-	part2, err := writer.CreateFormFile("file",filepath.Base("test.pdf"))
+	part2, err := writer.CreateFormFile("file", filepath.Base("test.pdf"))
 	_, err = io.Copy(part2, file)
 	err = writer.Close()
 
@@ -49,7 +62,6 @@ func home(w http.ResponseWriter, r *http.Request) {
 	req.Header.Add("Authorization", token)
 	req.Header.Add("Content-Type", "multipart/form-data")
 	req.Header.Set("Content-Type", writer.FormDataContentType())
-
 
 	client := &http.Client{}
 	response, err := client.Do(req)

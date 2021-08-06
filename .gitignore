@@ -1,0 +1,16 @@
+# Env
+.env
+
+# Test binary, build with `go test -c`
+*.test
+
+# Debug files
+debug
+
+# Report files
+coverage.out
+
+# IDE files
+.idea
+.vscode
+/embedded-signing-demos/go/embedded-signing

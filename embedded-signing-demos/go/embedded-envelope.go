@@ -104,7 +104,7 @@ func createEmbeddedEnvelope(c *gin.Context) (envResponse EmbeddedEnvelopeRespons
 			response.StatusCode,
 			"error.html",
 			gin.H{
-				"ErrorTitle": "Did not receive 202 status code",
+				"ErrorTitle": "Error Response",
 				"ErrorMessage": fmt.Errorf(
 					"status code: %v, message: %v",
 					response.StatusCode,

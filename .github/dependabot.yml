@@ -8,7 +8,6 @@ updates:
   target-branch: master
   reviewers:
     - echarrod
-    - LAFYoti
     - jlmartyres
     - nikhilPank
 
@@ -20,7 +19,6 @@ updates:
   target-branch: master
   reviewers:
     - echarrod
-    - LAFYoti
     - jlmartyres
     - nikhilPank
 
@@ -32,7 +30,6 @@ updates:
   target-branch: master
   reviewers:
     - echarrod
-    - LAFYoti
     - jlmartyres
     - nikhilPank
 
@@ -44,7 +41,6 @@ updates:
   target-branch: master
   reviewers:
     - echarrod
-    - LAFYoti
     - jlmartyres
     - nikhilPank
 
@@ -56,6 +52,5 @@ updates:
   target-branch: master
   reviewers:
     - echarrod
-    - LAFYoti
     - jlmartyres
     - nikhilPank

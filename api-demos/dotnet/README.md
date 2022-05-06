@@ -14,3 +14,5 @@
 1) Customise the `options.json` file as you wish
 1) Run `dotnet run`
 1) visit <https://localhost:5001/sign>
+
+- If using a demo API key, you will additionally need to change the API URL for it to work. To do this, navigate to Controllers/SignController.cs and edit line 85 so the URL is "https://demo.api.yotisign.com/v2/envelopes".

@@ -7,7 +7,6 @@ updates:
   open-pull-requests-limit: 3
   target-branch: master
   reviewers:
-    - echarrod
     - jlmartyres
     - nikhilPank
 
@@ -18,7 +17,6 @@ updates:
   open-pull-requests-limit: 3
   target-branch: master
   reviewers:
-    - echarrod
     - jlmartyres
     - nikhilPank
 
@@ -29,7 +27,6 @@ updates:
   open-pull-requests-limit: 3
   target-branch: master
   reviewers:
-    - echarrod
     - jlmartyres
     - nikhilPank
 
@@ -40,7 +37,6 @@ updates:
   open-pull-requests-limit: 3
   target-branch: master
   reviewers:
-    - echarrod
     - jlmartyres
     - nikhilPank
 
@@ -51,6 +47,5 @@ updates:
   open-pull-requests-limit: 3
   target-branch: master
   reviewers:
-    - echarrod
     - jlmartyres
     - nikhilPank
